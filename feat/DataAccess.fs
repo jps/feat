@@ -5,11 +5,10 @@ open FSharp.Data
 open FSharp.Data.JsonExtensions
 
 module DataAccess =
-    type jsonProvider = JsonProvider<"../feat/JsonSchema/FeatureSchema.json", SampleIsList=true>
+    type FeatureProvider = JsonProvider<"../feat/JsonSchema/FeatureSchema.json">
     let GetFeatureFilePaths directoryPath =         
         Directory.GetFiles(directoryPath, "*.json")        
-    let GetFeatures filePath =            
-        let fileContent = File.ReadAllText(filePath)
-        let json = jsonProvider.Load(filePath)
-        let array = json.JsonValue.AsArray()
-        array
+    let GetFeatures (filePath:string) =            
+        let json = FeatureProvider.Load(filePath)        
+        json
+        

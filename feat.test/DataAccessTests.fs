@@ -19,3 +19,4 @@ module DataAccessTests =
         let data = DataAccess.GetFeatures(testDataFileLocal)
         data |> should not' (be Null)
         data |> should haveLength 1
+        (Array.head data)

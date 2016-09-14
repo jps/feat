@@ -65,7 +65,6 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="DataAccessTests.fs" />
     <Content Include="packages.config" />
-    <Compile Include="dataTests.fs" />
     <None Include="TestData\Features.acceptance.feat.json" />
     <None Include="TestData\Features.feat.json" />
     <None Include="TestData\Features.int.feat.json" />
