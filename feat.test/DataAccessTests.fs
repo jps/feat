@@ -1,6 +1,6 @@
 ﻿namespace feat.test
 open System.IO
-open Xunit // import namespace
+open Xunit
 open FsUnit
 open feat
 
@@ -16,7 +16,8 @@ module DataAccessTests =
         paths |> should haveLength 6
     [<Fact>]
     let ``Finds feature in file`` () = 
-        let data = DataAccess.GetFeatures(testDataFileLocal)
+        let data = DataAccess.GetFeaturesFromFile(testDataFileLocal)
         data |> should not' (be Null)
         data |> should haveLength 1
-        (Array.head data)
+        Array.head(data).Enabled |> should be True
+        Array.head(data).Name |> should equal "SNB-1234:TestFeature"

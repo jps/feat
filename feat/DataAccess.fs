@@ -1,14 +1,14 @@
 ﻿namespace feat
+
 open System
 open System.IO
 open FSharp.Data
 open FSharp.Data.JsonExtensions
+open feat.Types
 
 module DataAccess =
-    type FeatureProvider = JsonProvider<"../feat/JsonSchema/FeatureSchema.json">
     let GetFeatureFilePaths directoryPath =         
         Directory.GetFiles(directoryPath, "*.json")        
-    let GetFeatures (filePath:string) =            
-        let json = FeatureProvider.Load(filePath)        
+    let GetFeaturesFromFile (filePath:string) =            
+        let json = FeatureToggleSchema.Load(filePath)
         json
-        

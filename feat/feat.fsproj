@@ -57,11 +57,13 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Types.fs" />
     <None Include="App.config" />
-    <Compile Include="DataAccess.fs" />
-    <Compile Include="Program.fs" />
     <Content Include="packages.config" />
     <None Include="JsonSchema\FeatureSchema.json" />
+    <Compile Include="DataAccess.fs" />
+    <Compile Include="DataManipulator.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

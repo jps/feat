@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="DataAccessTests.fs" />
+    <Compile Include="DataManiuplatorTests.fs" />
     <Content Include="packages.config" />
     <None Include="TestData\Features.acceptance.feat.json" />
     <None Include="TestData\Features.feat.json" />

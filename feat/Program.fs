@@ -6,8 +6,8 @@ module Main =
     let defaultSearchPath = "C:\Development\moonpig.features.definitions\Library\src\Moonpig.Features.Definitions\Configs";
     let ls = 
         let filePaths = DataAccess.GetFeatureFilePaths defaultSearchPath
-        let pathFeatures = filePaths |> Array.map(fun path -> (path, DataAccess.GetFeatures path))
-        let flattend = pathFeatures |> Array.map(fun (path,features) -> features |> Array.map(fun feature -> (path,feature))) 
+        let pathsFeatures = filePaths |> Array.map(fun path -> (path, DataAccess.GetFeaturesFromFile path))
+        let flattend = pathsFeatures |> Array.map(fun (path,features) -> features |> Array.map(fun feature -> (path,feature))) 
                                     |> Array.concat
         let groupedByName = flattend |> Array.groupBy(fun (path,feature) -> feature.Name)
         //let sorted = 
